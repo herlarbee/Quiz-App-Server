@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "51f10e067f1695b6a64aa664c2732011918b67f152366a015b3f9beec64d88337fd83617be55fa367c7b5e63807d2bd14b61f9dc6dbe54102cf5ed2448efdf4c02fb54a7707fd6f7a40525540ad89ec54f1d6523cb335a8b14adc55a1c1299931b262efd01197a471745e45006012b0dba05dcace4c9eaa8ad2528575d57283f545bd40c8c4adfa222681510149c388f1c90d6d9cd1a0e3b837d9057b8c48a6079fd876a1eb49d4076ab107f551a4ee8236fea0ef47856fd368305418fa35d385c2009f7c627568ce6d73b797a5b27509546bd240d78e4856d389f4ba34b91752bc308a17ae85b6800a316a1cbbd9f81be196dcf7bde5e80bd0ba1581aff4be8",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "service": "users",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/QuizProject"
+}
